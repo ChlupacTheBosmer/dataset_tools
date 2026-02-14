@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataset-tools-dst"
+version = "0.1.0"
+description = "Dataset curation toolkit for FiftyOne + Label Studio workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "DST" }]
+dependencies = [
+  "fiftyone==1.11.0",
+  "fiftyone-brain==0.21.4",
+  "label-studio-sdk==2.0.17",
+  "requests==2.32.4",
+  "numpy==2.3.5",
+  "Pillow==12.1.0",
+  "scikit-learn==1.8.0",
+  "torch==2.7.1",
+  "transformers==4.57.5",
+  "umap-learn>=0.5.7,<0.6",
+]
+
+[project.optional-dependencies]
+anomaly = [
+  "anomalib==2.2.0",
+]
+dev = [
+  "pytest>=8,<10",
+  "pytest-cov>=5,<8",
+  "coverage>=7,<8",
+]
+
+[project.scripts]
+dst = "dataset_tools.dst:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dataset_tools = ["*.json", "examples/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["dataset_tools"]
+omit = [
+  "*/debug/*",
+  "tests/*",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

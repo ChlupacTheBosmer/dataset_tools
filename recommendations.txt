@@ -1,0 +1,23 @@
+# dataset_tools dependency recommendations
+# Scope: only dependencies needed by dataset_tools runtime + planned analysis expansion.
+# Baseline verified in current working environment.
+
+# Core runtime
+fiftyone==1.11.0
+fiftyone-brain==0.21.4
+label-studio-sdk==2.0.17
+requests==2.32.4
+
+# Metrics / embeddings
+numpy==2.3.5
+Pillow==12.1.0
+scikit-learn==1.8.0
+torch==2.7.1
+transformers==4.57.5
+
+# Planned advanced analysis additions
+umap-learn>=0.5.7,<0.6
+
+# Optional future extensions (install only when used)
+# anomalib==2.2.0
+# qdrant-client>=1.9,<2

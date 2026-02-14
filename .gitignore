@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+
+# Test/coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local runtime config/secrets
+local_config.json
+src/dataset_tools/local_config.json
+
+# IDE
+.vscode/
+.idea/
+.DS_Store

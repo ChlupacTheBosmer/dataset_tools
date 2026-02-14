@@ -1,0 +1,2 @@
+[console_scripts]
+dst = dataset_tools.dst:main

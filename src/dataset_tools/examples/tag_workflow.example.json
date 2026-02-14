@@ -1,0 +1,57 @@
+{
+  "dataset_name": "rodent_dataset_full",
+  "fail_fast": true,
+  "rules": [
+    {
+      "tag": "delete",
+      "operation": "delete_files_and_samples",
+      "params": {}
+    },
+    {
+      "tag": "duplicate",
+      "operation": "move_samples_to_dataset",
+      "params": {
+        "target_dataset": "rodent_duplicates",
+        "remove_from_source": true
+      }
+    },
+    {
+      "tag": "fix",
+      "operation": "send_to_label_studio",
+      "params": {
+        "project_title": "Rodent_Debug_Test",
+        "upload_strategy": "sdk_batched",
+        "clear_project_tasks": true,
+        "source_path": "/data/images/mice/frames",
+        "source_title": "Mice Frames",
+        "target_path": "/data/images/mice/annotations_export",
+        "label_field": "ground_truth"
+      }
+    },
+    {
+      "tag": null,
+      "operation": "pull_from_label_studio",
+      "params": {
+        "project_title": "Rodent_Debug_Test",
+        "corrections_field": "ls_corrections"
+      }
+    },
+    {
+      "tag": "fix",
+      "operation": "sync_corrections_to_disk",
+      "params": {
+        "dry_run": true,
+        "corrections_field": "ls_corrections",
+        "label_to_class_id": {
+          "rodent": 0,
+          "mouse": 0
+        },
+        "default_class_id": 0,
+        "path_replacements": [
+          ["/frames/", "/labels/"],
+          ["/images/", "/labels/"]
+        ]
+      }
+    }
+  ]
+}

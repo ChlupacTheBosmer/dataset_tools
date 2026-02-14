@@ -1,0 +1,35 @@
+{
+  "label_studio": {
+    "url": "https://your-label-studio.example.com",
+    "api_key": "<set-your-api-key>",
+    "project_title": "FiftyOne Curation",
+    "source_path": "/data/images/frames_visitors_ndb",
+    "source_title": "Frames Visitors NDB",
+    "target_path": "/data/images/annotations_export",
+    "batch_size": 10,
+    "clear_existing_tasks": false,
+    "upload_strategy": "sdk_batched"
+  },
+  "mount": {
+    "host_root": "/home/user1000/shared_data",
+    "ls_document_root": "/data/images",
+    "local_files_prefix": "/data/local-files/?d="
+  },
+  "dataset": {
+    "name": "visitors_dataset",
+    "label_field": "ground_truth",
+    "corrections_field": "ls_corrections",
+    "default_class_id": 0,
+    "label_to_class_id": {
+      "Insect": 0,
+      "Anomaly": 1
+    }
+  },
+  "disk_sync": {
+    "path_replacements": [
+      ["/frames/", "/labels/"],
+      ["/images/", "/labels/"]
+    ],
+    "backup_suffix_format": "%Y%m%d_%H%M%S"
+  }
+}
