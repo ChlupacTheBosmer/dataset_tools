@@ -1058,6 +1058,9 @@ Returns:
     use_engine_predict = resolved.export_type.strip().lower() == "torch"
 
     if use_engine_predict:
+        # Enforce trust policy before attempting any torch-based anomalib runtime path.
+        # Without this fast-fail, the engine path error gets swallowed by fallback logic.
+        _assert_trusted_torch_loading(trust_remote_code=trust_remote_code)
         try:
             score_values, flag_values, map_arrays, mask_arrays = _score_with_engine_predict(
                 artifact=resolved,

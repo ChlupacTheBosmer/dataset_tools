@@ -23,6 +23,8 @@ This docs set is organized so you can move from operations -> architecture -> AP
 - `docs/dst/context/fiftyone_reference_hub.md`: FiftyOne reference map
 - `docs/dst/context/label_studio_reference_hub.md`: Label Studio API/SDK reference map
 - `docs/dst/context/advanced_analysis_research.md`: consolidated research notes
+- `docs/dst/context/cross_repo_compatibility_matrix.md`: shared dependency matrix with `od_training`
+- `docs/dst/context/od_training_handoff_contract.md`: export handoff contract for training
 
 ## Agent Onboarding
 

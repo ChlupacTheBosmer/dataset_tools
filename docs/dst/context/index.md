@@ -18,6 +18,10 @@ These are not API/module docs; they are workflow, external-reference, and integr
   - consolidated research notes on embeddings/brain/anomaly methods and how they map to current architecture
 - `docs/dst/context/manual_validation_checklist.md`
   - manual validation checklist for real-world execution safety and behavior checks
+- `docs/dst/context/cross_repo_compatibility_matrix.md`
+  - shared dependency baseline when using one venv for `dst` + `od_training`
+- `docs/dst/context/od_training_handoff_contract.md`
+  - required export contract for seamless training handoff
 
 ## Scope Rules
 

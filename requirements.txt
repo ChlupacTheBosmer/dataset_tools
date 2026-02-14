@@ -1,9 +1,9 @@
 # Runtime dependencies for dataset_tools standalone repo
-fiftyone==1.11.0
-fiftyone-brain==0.21.4
-label-studio-sdk==2.0.17
+fiftyone>=1.11,<2.0
+fiftyone-brain>=0.21,<1.0
+label-studio-sdk==1.0.20
 requests==2.32.4
-numpy==2.3.5
+numpy>=1.23.5,<2.0.0
 Pillow==12.1.0
 scikit-learn==1.8.0
 torch==2.7.1

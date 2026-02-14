@@ -31,6 +31,10 @@ It exists so your FiftyOne + Label Studio curation tooling is no longer coupled 
 5. if an agent is doing the work:
    - `docs/dst/agent/index.md`
 
+Cross-repo references:
+- `docs/dst/context/cross_repo_compatibility_matrix.md`
+- `docs/dst/context/od_training_handoff_contract.md`
+
 ## Repository Layout
 
 - `src/dataset_tools/`
