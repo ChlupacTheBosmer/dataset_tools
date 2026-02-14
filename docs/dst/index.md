@@ -24,6 +24,11 @@ This docs set is organized so you can move from operations -> architecture -> AP
 - `docs/dst/context/label_studio_reference_hub.md`: Label Studio API/SDK reference map
 - `docs/dst/context/advanced_analysis_research.md`: consolidated research notes
 
+## Agent Onboarding
+
+- `docs/dst/agent/index.md`: agent entrypoint and mandatory read order
+- `docs/dst/agent/onboarding_launchpad.md`: first-session protocol, invariants, and validation process
+
 ## Generated Exhaustive References
 
 - `docs/dst/cli-reference.md`: complete command/subcommand/argument map generated from `dataset_tools.dst.build_parser()`

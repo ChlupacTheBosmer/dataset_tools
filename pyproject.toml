@@ -48,6 +48,16 @@ dataset_tools = ["*.json", "examples/*.json"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+filterwarnings = [
+  # Keep first-party deprecations visible and blocking.
+  "error::DeprecationWarning:dataset_tools.*",
+  # Known third-party deprecations from pinned upstream stack.
+  "ignore:The distutils package is deprecated and slated for removal in Python 3.12.*:DeprecationWarning",
+  "ignore:module 'sre_constants' is deprecated:DeprecationWarning",
+  "ignore:Passing a class to strawberry.scalar\\(\\) is deprecated.*:DeprecationWarning",
+  "ignore:Importing from torchao\\.dtypes.* is deprecated.*:DeprecationWarning",
+  "ignore:Importing .* from torchao\\.dtypes is deprecated.*:DeprecationWarning",
+]
 
 [tool.coverage.run]
 source = ["dataset_tools"]

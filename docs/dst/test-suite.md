@@ -73,6 +73,11 @@ Coverage command result:
 
 - `TOTAL dataset_tools coverage: 84%`
 
+Warning policy:
+
+- first-party deprecations from `dataset_tools` are configured as test failures
+- known third-party deprecation warnings are filtered in `pyproject.toml` to reduce noise
+
 Additional optional runs executed on February 13, 2026:
 
 - `RUN_REAL_LIFE_TESTS=1 python -m pytest -q tests/test_real_life_suite.py -k "not network"` -> `2 passed, 1 deselected`
